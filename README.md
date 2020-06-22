@@ -15,7 +15,7 @@ it simplifies simple tasks like
 
 ```
 
-### managing events
+### handling events
 
 ```javascript 
 
