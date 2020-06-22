@@ -3,7 +3,7 @@ A Tiny Dom Manipulation Library
 
 it simplifies simple tasks like
 
-# querying elements
+### querying elements
 
 ```javascript
   
@@ -15,7 +15,7 @@ it simplifies simple tasks like
 
 ```
 
-# managing events
+### managing events
 
 ```javascript 
 
@@ -34,7 +34,7 @@ it simplifies simple tasks like
   });
 
 ```
-# and
+### and
 
 ```javascript
   
