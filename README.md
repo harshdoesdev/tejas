@@ -26,7 +26,7 @@ it simplifies simple tasks like
   
   ready(() => {
   
-    // your code that you want to run after the dom has loaded
+    // your code which you want to run after the dom has loaded
   
   });
 ```
