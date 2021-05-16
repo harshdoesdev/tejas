@@ -40,4 +40,7 @@ it simplifies simple tasks like
    console.log(attr(el, "id")); // getAttribute
    
    attr(el, "id", "test"); // setAttribute
+   
+   attr(el, "disabled", false); // removes attribute
+   
 ```
