@@ -41,6 +41,5 @@ it simplifies simple tasks like
    
    attr(el, "id", "test"); // setAttribute
    
-   attr(el, "disabled", false); // removes attribute
-   
+   attr(el, "disabled", false); // removeAttribute
 ```
