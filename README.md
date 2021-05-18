@@ -18,7 +18,7 @@ it simplifies simple tasks like
 ```javascript 
   import { on, off, ready } from './tez.js';
   
-  const greet = () => console.log("hello world);
+  const greet = () => console.log("hello world");
   
   on(button, "click", greet); // addEventListener
   
