@@ -2,9 +2,9 @@
 
 const doc = document;
 
-export const qs = (sel, ctx = doc) => ctx.querySelector(sel);
+export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
-export const qsa = (sel, ctx = doc) => ctx.querySelectorAll(sel);
+export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 
 export const style = (el, obj) => Object.assign(el.style, obj);
 
