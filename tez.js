@@ -8,14 +8,14 @@ export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 
 export const style = (el, obj) => Object.assign(el.style, obj);
 
-export const attr = (el, name, val) => {
-  if (val == null)
-    return el.getAttribute(name);
+export const attr = (el, attributeName, value) => {
+  if (value == null)
+    return el.getAttribute(attributeName);
   
-  if (val == false) {
-    el.removeAttribute(name);
+  if (value == false) {
+    el.removeAttribute(attributeName);
   } else {
-    el.setAttribute(name, val);
+    el.setAttribute(attributeName, value);
   }
 };
 
