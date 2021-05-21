@@ -19,9 +19,9 @@ export const attr = (el, name, val) => {
   }
 };
 
-export const on = (el, evt, hand) => el.addEventListener(evt, hand, false);
+export const on = (element, type, handler) => element.addEventListener(type, handler, false);
 
-export const off = (el, evt, hand) => el.removeEventListener(evt, hand, false);
+export const off = (element, type, handler) => element.removeEventListener(type, handler, false);
 
 export const ready = app => {
   if (/complete|loaded|interactive/.test(doc.readyState) && doc.body) {
