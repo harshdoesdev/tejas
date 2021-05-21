@@ -9,10 +9,10 @@ export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 export const style = (el, obj) => Object.assign(el.style, obj);
 
 export const attr = (el, attributeName, value) => {
-  if (value == null)
+  if (value === undefined)
     return el.getAttribute(attributeName);
   
-  if (value == false) {
+  if (value === false) {
     el.removeAttribute(attributeName);
   } else {
     el.setAttribute(attributeName, value);
