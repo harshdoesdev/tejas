@@ -1,45 +1,43 @@
 # tez.js
-A Tiny Dom Manipulation Library
+A tiny DOM manipulation library. Tez means fast in Hindi.
 
-it simplifies simple tasks like
+It simplifies simple tasks like:
 
-### querying elements
+### Querying elements
 
 ```javascript
-  import { qs, qsa } from './tez.js';
-  
-  const el = qs("#test"); // document.querySelector
-  
-  const els = qsa("div"); // document.querySelectorAll
+import { qs, qsa } from './tez.js';
+
+const el = qs("#test"); // document.querySelector
+
+const els = qsa("div"); // document.querySelectorAll
 ```
 
-### handling events
+### Handling events
 
 ```javascript 
-  import { on, off, ready } from './tez.js';
-  
-  const greet = () => console.log("hello world");
-  
-  on(button, "click", greet); // addEventListener
-  
-  off(button, "click", greet); // removeEventListener
-  
-  ready(() => {
-  
-    // your code which you want to run after the dom has loaded
-  
-  });
+import { on, off, ready } from './tez.js';
+
+const greet = () => console.log("hello world");
+
+on(button, "click", greet); // addEventListener
+
+off(button, "click", greet); // removeEventListener
+
+ready(() => {
+  // Your code which you want to run after the DOM has loaded.
+});
 ```
-### and
+### Attributes and CSS styling
 
 ```javascript
-   import { style, attr } from './tez.js';
-   
-   style(el, { color: "red", background: "blue" }); // adding multiple styles to an element
-   
-   console.log(attr(el, "id")); // getAttribute
-   
-   attr(el, "id", "test"); // setAttribute
-   
-   attr(el, "disabled", false); // removeAttribute
+import { style, attr } from './tez.js';
+
+style(el, { color: "red", background: "blue" }); // adding multiple styles to an element
+
+console.log(attr(el, "id")); // getAttribute
+
+attr(el, "id", "test"); // setAttribute
+
+attr(el, "disabled", false); // removeAttribute
 ```
