@@ -18,8 +18,8 @@ const elems = qsa("div"); // document.querySelectorAll
 ```javascript
 import { el } from './tez.js';
 
-const div = el('div.class1.class2#divID'); 
-// Output: <div id="divID" class="class1 class2"></div>
+const div = el('div.class1.class2#foo'); 
+// Output: <div id="foo" class="class1 class2"></div>
 // you can also omit 'div' in the selector, this function 
 // will automatically create a div element if no tagName is provided
 
