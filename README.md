@@ -30,9 +30,7 @@ you should first append its child nodes to a DocumentFragment, which you can cre
 ```javascript
 import { el, frag } from './tez.js';
 
-const list = el('.list');
-
-const items = ['Buy Milk', 'Water Plants', 'Buy Tea'].map(task => {
+const createItem = task => {
   
   const item = el('.item');
   
@@ -40,7 +38,11 @@ const items = ['Buy Milk', 'Water Plants', 'Buy Tea'].map(task => {
   
   return item;
 
-});
+};
+
+const list = el('.list');
+
+const items = ['Buy Milk', 'Water Plants', 'Buy Tea'].map(createItem);
 
 const fragment = frag();
 
