@@ -1,5 +1,6 @@
 # tez.js
-A tiny DOM manipulation library. Tez means fast in Hindi.
+<img src="https://raw.githubusercontent.com/rwbeast/tez.js/master/logo.svg" width="128px" height="128px">
+A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 
 It simplifies simple tasks like:
 
