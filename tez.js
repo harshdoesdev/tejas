@@ -37,7 +37,7 @@ const el = (selector, attributes = {}, ...children) => {
   if(id) 
     element.id = id;
 
-  if(className) 
+  if(className.length) 
     element.className = className.join(' ');
 
   if(attributes) 
