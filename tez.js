@@ -6,16 +6,16 @@ export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
 export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 
-export const style = (el, obj) => Object.assign(el.style, obj);
+export const style = (element, obj) => Object.assign(element.style, obj);
 
-export const attr = (el, attributeName, value) => {
+export const attr = (element, attributeName, value) => {
   if (value === undefined)
-    return el.getAttribute(attributeName);
+    return element.getAttribute(attributeName);
   
   if (value === false) {
-    el.removeAttribute(attributeName);
+    element.removeAttribute(attributeName);
   } else {
-    el.setAttribute(attributeName, value);
+    element.setAttribute(attributeName, value);
   }
 };
 
