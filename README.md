@@ -18,8 +18,36 @@ const elems = qsa("div"); // document.querySelectorAll
 ```javascript
 import { el } from './tez.js';
 
-const div = el('div.class1.class2#foo'); 
-// Output: <div id="foo" class="class1 class2"></div>
+const btn = el('button'); // Output: <button></button>
+
+const foo = el('.class1.class2#foo'); // Output: <div id="foo" class="class1 class2"></div>
+```
+**Note:** When you have to append an element that's going to contains several other child elements, 
+you should first append its child nodes to a DocumentFragment, which you can create using the frag() function included in the library.
+
+**Example:**
+```javascript
+import { el, frag } from './tez.js';
+
+const list = el('.list');
+
+const items = ['Buy Milk', 'Water Plants', 'Buy Tea'].map(task => {
+  
+  const item = el('.item');
+  
+  item.textContent = task;
+  
+  return item;
+
+});
+
+const fragment = frag();
+
+fragment.append(...items);
+
+list.appendChild(fragment);
+
+document.body.appendChild(list);
 ```
 
 ### Handling events
