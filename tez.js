@@ -2,62 +2,56 @@
 
 const doc = document;
 
-const selectorRgx = /(?=\.)|(?=#)/;
+const selectorRegex = /(?=\.)|(?=#)/;
 
 const parseSelector = selector => {
-
-  const tokens = selector.split(selectorRgx);
+  const tokens = selector.split(selectorRegex);
 
   return tokens.reduce((output, token) => {
 
-    switch(token[0]) {
+    switch (token[0]) {
       case '.':
         output.className.push(token.slice(1));
-      break;
+        break;
       case '#':
         output.id = token.slice(1);
-      break;
+        break;
       default:
         output.tag = token;
-      break;
+        break;
     }
 
     return output;
-
-  },  { className: [] });
- 
+  }, { className: [] });
 };
 
 const el = (selector, attributes = {}, ...children) => {
-
   const { tag = 'div', id, className } = parseSelector(selector);
-
   const element = doc.createElement(tag);
 
-  if(id) 
+  if (id) 
     element.id = id;
 
-  if(className.length) 
+  if (className.length) 
     element.className = className.join(' ');
 
-  if(attributes) 
+  if (attributes) 
     Object.assign(element, attributes);
 
-  if(children.length) {
+  if (children.length) {
     const fragment = doc.createDocumentFragment();
     fragment.append(...children);
     element.appendChild(fragment);
   }
 
   return element;
-
 };
 
 export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
 export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 
-export const style = (element, obj) => Object.assign(element.style, obj);
+export const style = (element, styleObj) => Object.assign(element.style, styleObj);
 
 export const attr = (element, attributeName, value) => {
   if (value === undefined)
