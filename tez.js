@@ -9,14 +9,14 @@ const parseSelector = selector => {
 
   return tokens.reduce((output, token) => {
     switch(token[0]) {
-        case '.':
-            output.className.push(token.slice(1));
+      case '.':
+        output.className.push(token.slice(1));
         break;
-        case '#':
-            output.id = token.slice(1);
+      case '#':
+        output.id = token.slice(1);
         break;
-        default: 
-            output.tag = token;
+      default: 
+        output.tag = token;
         break;
     }
 
@@ -25,16 +25,16 @@ const parseSelector = selector => {
 };
 
 export const el = selector => {
-    const { tag = 'div', id, className } = parseSelector(selector);
-    const element = doc.createElement(tag);
+  const { tag = 'div', id, className } = parseSelector(selector);
+  const element = doc.createElement(tag);
 
-    if(id) 
-      element.id = id;
+  if(id) 
+    element.id = id;
 
-    if(className.length) 
-      element.className = className.join(' ');
+  if(className.length) 
+    element.className = className.join(' ');
 
-    return element;
+  return element;
 };
 
 export const frag = () => doc.createDocumentFragment();
