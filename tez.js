@@ -2,6 +2,57 @@
 
 const doc = document;
 
+const selectorRgx = /(?=\.)|(?=#)/;
+
+const parseSelector = selector => {
+
+  const tokens = selector.split(selectorRgx);
+
+  return tokens.reduce((output, token) => {
+
+    switch(token[0]) {
+      case '.':
+        output.className.push(token.slice(1));
+      break;
+      case '#':
+        output.id = token.slice(1);
+      break;
+      default:
+        output.tag = token;
+      break;
+    }
+
+    return output;
+
+  },  { className: [] });
+ 
+};
+
+const el = (selector, attributes = {}, ...children) => {
+
+  const { tag = 'div', id, className } = parseSelector(selector);
+
+  const element = document.createElement(tag);
+
+  if(id) 
+    element.id = id;
+
+  if(className) 
+    element.className = className.join(' ');
+
+  if(attributes) 
+    Object.assign(element, attributes);
+
+  if(children.length) {
+    const fragment = document.createDocumentFragment();
+    fragment.append(...children);
+    element.appendChild(fragment);
+  }
+
+  return element;
+
+};
+
 export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
 export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
