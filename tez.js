@@ -4,24 +4,26 @@ const doc = document;
 
 const selectorRgx = /(?=\.)|(?=#)/;
 
+const tokenReducer = (output, token) => {
+  switch(token[0]) {
+    case '.':
+      output.className.push(token.slice(1));
+      break;
+    case '#':
+      output.id = token.slice(1);
+      break;
+    default: 
+      output.tag = token;
+      break;
+  }
+
+  return output;
+};
+
 const parseSelector = selector => {
   const tokens = selector.split(selectorRgx);
 
-  return tokens.reduce((output, token) => {
-    switch(token[0]) {
-      case '.':
-        output.className.push(token.slice(1));
-        break;
-      case '#':
-        output.id = token.slice(1);
-        break;
-      default: 
-        output.tag = token;
-        break;
-    }
-
-    return output;
-  }, { className: [] });
+  return tokens.reduce(tokenReducer, { className: [] });
 };
 
 export const el = selector => {
