@@ -40,17 +40,23 @@ const createItem = task => {
 
 };
 
-const list = el('.list');
+const createList = tasks => {
+  
+  const list = el('.list');
 
-const items = ['Buy Milk', 'Water Plants', 'Buy Tea'].map(createItem);
+  const items = tasks.map(createItem);
 
-const fragment = frag();
+  const fragment = frag();
 
-fragment.append(...items);
+  fragment.append(...items);
 
-list.appendChild(fragment);
+  list.appendChild(fragment);
+  
+  return list;
 
-document.body.appendChild(list);
+};
+
+document.body.appendChild(createList(['Buy Milk', 'Buy Tea', 'Water Plants']));
 ```
 
 ### Handling events
