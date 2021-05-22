@@ -1,4 +1,4 @@
-/* tez.js | Created By Harsh Singh | MIT License */
+/* tez.js | Tez.js Contributors | MIT License */
 
 const doc = document;
 
