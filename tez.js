@@ -2,22 +2,21 @@
 
 const doc = document;
 
-const selectorRegex = /(?=\.)|(?=#)/;
+const selectorRgx = /(?=\.)|(?=#)/;
 
 const parseSelector = selector => {
-  const tokens = selector.split(selectorRegex);
+  const tokens = selector.split(selectorRgx);
 
   return tokens.reduce((output, token) => {
-
-    switch (token[0]) {
-      case '.':
-        output.className.push(token.slice(1));
+    switch(token[0]) {
+        case '.':
+            output.className.push(token.slice(1));
         break;
-      case '#':
-        output.id = token.slice(1);
+        case '#':
+            output.id = token.slice(1);
         break;
-      default:
-        output.tag = token;
+        default: 
+            output.tag = token;
         break;
     }
 
@@ -25,27 +24,20 @@ const parseSelector = selector => {
   }, { className: [] });
 };
 
-const el = (selector, attributes = {}, ...children) => {
-  const { tag = 'div', id, className } = parseSelector(selector);
-  const element = doc.createElement(tag);
+export const el = selector => {
+    const { tag = 'div', id, className } = parseSelector(selector);
+    const element = doc.createElement(tag);
 
-  if (id) 
-    element.id = id;
+    if(id) 
+      element.id = id;
 
-  if (className.length) 
-    element.className = className.join(' ');
+    if(className.length) 
+      element.className = className.join(' ');
 
-  if (attributes) 
-    Object.assign(element, attributes);
-
-  if (children.length) {
-    const fragment = doc.createDocumentFragment();
-    fragment.append(...children);
-    element.appendChild(fragment);
-  }
-
-  return element;
+    return element;
 };
+
+export const frag = () => doc.createDocumentFragment();
 
 export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
