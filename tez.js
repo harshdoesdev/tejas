@@ -32,7 +32,7 @@ const el = (selector, attributes = {}, ...children) => {
 
   const { tag = 'div', id, className } = parseSelector(selector);
 
-  const element = document.createElement(tag);
+  const element = doc.createElement(tag);
 
   if(id) 
     element.id = id;
@@ -44,7 +44,7 @@ const el = (selector, attributes = {}, ...children) => {
     Object.assign(element, attributes);
 
   if(children.length) {
-    const fragment = document.createDocumentFragment();
+    const fragment = doc.createDocumentFragment();
     fragment.append(...children);
     element.appendChild(fragment);
   }
