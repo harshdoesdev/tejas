@@ -52,11 +52,11 @@ ready(() => {
 ```javascript
 import { style, attr } from './tez.js';
 
-style(el, { color: "red", background: "blue" }); // adding multiple styles to an element
+style(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
 
-console.log(attr(el, "id")); // getAttribute
+console.log(attr(elem, "id")); // getAttribute
 
-attr(el, "id", "test"); // setAttribute
+attr(elem, "id", "test"); // setAttribute
 
-attr(el, "disabled", false); // removeAttribute
+attr(elem, "disabled", false); // removeAttribute
 ```
