@@ -8,9 +8,25 @@ It simplifies simple tasks like:
 ```javascript
 import { qs, qsa } from './tez.js';
 
-const el = qs("#test"); // document.querySelector
+const elem = qs("#test"); // document.querySelector
 
-const els = qsa("div"); // document.querySelectorAll
+const elems = qsa("div"); // document.querySelectorAll
+```
+
+### Creating elements
+
+```javascript
+import { el } from './tez.js';
+
+const div = el('div.class1.class2#divID'); // Output: <div id="divID" class="class1 class2"></div>
+                                           // you can also omit 'div' in the selector, this function 
+                                           // will automatically create a div element if no tagName is provided
+const div = el('.parent', { style: 'color: red' },
+   el('.child', null, 'Hello world')
+); // Output: 
+   // <div class="parent" style="color: red">
+   //   <div class="child">Hello world</div>
+   // </div>
 ```
 
 ### Handling events
