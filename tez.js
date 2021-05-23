@@ -11,7 +11,7 @@ const parseSelector = selector => {
 
   let id = '', className = '';
 
-  for(let i = 1; i < tokens.length; ++i) {
+  for(let i = 1; i < tokens.length; i += 2) {
     switch(tokens[i]) {
       case '.':
         className += ` ${tokens[i + 1]}`;
