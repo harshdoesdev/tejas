@@ -37,7 +37,7 @@ import { el, frag } from './tez.js';
 
 const createItem = task => {
   
-  const item = el('.item');
+  const item = el('li.item');
   
   item.textContent = task;
   
@@ -47,7 +47,7 @@ const createItem = task => {
 
 const createList = tasks => {
   
-  const list = el('.list');
+  const list = el('ul.list');
 
   const items = tasks.map(createItem);
 
