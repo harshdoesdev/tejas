@@ -2,7 +2,7 @@
 
 const doc = document;
 
-const selectorRgx = /(?=\.)|(?=#)/;
+const selectorRgx = /(?=[.#])/;
 
 const tokenReducer = (output, token) => {
   switch(token[0]) {
