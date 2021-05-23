@@ -2,39 +2,46 @@
 
 const doc = document;
 
-const selectorRgx = /(?=[.#])/;
+const selectorRgx = /([.#])/;
 
-const tokenReducer = (output, token) => {
-  switch(token[0]) {
-    case '.':
-      output.className.push(token.slice(1));
-      break;
-    case '#':
-      output.id = token.slice(1);
-      break;
-    default: 
-      output.tag = token;
-      break;
-  }
-
-  return output;
-};
+const ns = 'http://www.w3.org/2000/svg';
 
 const parseSelector = selector => {
   const tokens = selector.split(selectorRgx);
 
-  return tokens.reduce(tokenReducer, { className: [] });
+  let id = '', className = '';
+
+  for(let i = 1; i < tokens.length; i += 2) {
+    switch(tokens[i]) {
+      case '.':
+        className += ` ${tokens[i + 1]}`
+        break;
+      case '#':
+        id = tokens[i + 1]
+    }
+  }
+
+  return {
+    tag: tokens[0] || 'div',
+    className: className.trim(),
+    id
+  };
 };
 
-export const el = selector => {
-  const { tag = 'div', id, className } = parseSelector(selector);
-  const element = doc.createElement(tag);
+export const el = (selector, isSvg) => {
+  const { tag, id, className } = parseSelector(selector);
+  const element = isSvg ? doc.createElementNS(ns, tag) : doc.createElement(tag);
 
   if(id) 
     element.id = id;
 
-  if(className.length) 
-    element.className = className.join(' ');
+  if(className) {
+    if(isSvg) {
+      attr(element, 'class', className);
+    } else {
+      element.className = className;
+    }
+  }
 
   return element;
 };
