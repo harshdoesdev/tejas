@@ -14,10 +14,10 @@ const parseSelector = selector => {
   for(let i = 1; i < tokens.length; ++i) {
     switch(tokens[i]) {
       case '.':
-        className += ` ${tokens[i + 1]}`
+        className += ` ${tokens[i + 1]}`;
         break;
       case '#':
-        id = tokens[i + 1]
+        id = tokens[i + 1];
     }
   }
 
