@@ -1,17 +1,14 @@
 /* tez.js | Tez.js Contributors | MIT License */
 
 const doc = document;
-
 const selectorRgx = /([.#])/;
-
 const ns = 'http://www.w3.org/2000/svg';
 
 const parseSelector = selector => {
   const tokens = selector.split(selectorRgx);
-
   let id = '', className = '';
 
-  for(let i = 1; i < tokens.length; i += 2) {
+  for (let i = 1; i < tokens.length; i += 2) {
     switch(tokens[i]) {
       case '.':
         className += ` ${tokens[i + 1]}`;
@@ -32,11 +29,11 @@ export const el = (selector, isSvg) => {
   const { tag, id, className } = parseSelector(selector);
   const element = isSvg ? doc.createElementNS(ns, tag) : doc.createElement(tag);
 
-  if(id) 
+  if (id) 
     element.id = id;
 
-  if(className) {
-    if(isSvg) {
+  if (className) {
+    if (isSvg) {
       attr(element, 'class', className);
     } else {
       element.className = className;
