@@ -1,15 +1,15 @@
 /* tez.js | Tez.js Contributors | MIT License */
 
 const doc = document;
-const selectorRgx = /([.#])/;
+const selectorRegex = /([.#])/;
 const ns = 'http://www.w3.org/2000/svg';
 
 const parseSelector = selector => {
-  const tokens = selector.split(selectorRgx);
+  const tokens = selector.split(selectorRegex);
   let id = '', className = '';
 
   for (let i = 1; i < tokens.length; i += 2) {
-    switch(tokens[i]) {
+    switch (tokens[i]) {
       case '.':
         className += ` ${tokens[i + 1]}`;
         break;
@@ -25,7 +25,7 @@ const parseSelector = selector => {
   };
 };
 
-export const el = (selector, isSvg) => {
+export const el = (selector, isSvg = false) => {
   const { tag, id, className } = parseSelector(selector);
   const element = isSvg ? doc.createElementNS(ns, tag) : doc.createElement(tag);
 
