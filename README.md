@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/rwbeast/tez.js/master/logo.svg" width="128px" height="128px">
 A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 
-### Install
+## Install
 Tez.js is a Native Javascript Module which you can import in your project.
 
 **From CDN:**
