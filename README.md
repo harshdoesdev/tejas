@@ -1,9 +1,6 @@
 # tez-dom
 <img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" width="128px" height="128px">
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rwbeast/tez-dom)
-![GitHub all releases](https://img.shields.io/github/downloads/rwbeast/tez-dom/total)
-
 A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 
 ## Install
@@ -16,7 +13,7 @@ npm i tez-dom
 
 **From CDN:**
 ```javascript
-import { ready, qs, on } from 'https://cdn.jsdelivr.net/gh/rwbeast/tez-dom/tez-dom.js';
+import { ready, qs, on } from 'https://cdn.jsdelivr.net/gh/rwbeast/tez-dom/dist/tez-dom.min.js';
 
 const initApp = () => {
 
