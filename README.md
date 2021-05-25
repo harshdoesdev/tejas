@@ -1,13 +1,13 @@
-# tez.js
-<img src="https://raw.githubusercontent.com/rwbeast/tez.js/master/logo.svg" width="128px" height="128px">
+# tez-dom
+<img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" width="128px" height="128px">
 A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 
 ## Install
-Tez.js is a Native Javascript Module which you can import in your project.
+tez-dom is a Native Javascript Module which you can import in your project.
 
 **From CDN:**
 ```javascript
-import { ready, qs, on } from 'https://cdn.jsdelivr.net/gh/rwbeast/tez.js/tez.js';
+import { ready, qs, on } from 'https://cdn.jsdelivr.net/gh/rwbeast/tez-dom/tez-dom.js';
 
 const initApp = () => {
 
@@ -27,7 +27,7 @@ ready(initApp);
 ### Querying elements
 
 ```javascript
-import { qs, qsa } from './tez.js';
+import { qs, qsa } from './tez-dom.js';
 
 const elem = qs("#test"); // document.querySelector
 
@@ -37,7 +37,7 @@ const elems = qsa("div"); // document.querySelectorAll
 ### Creating elements
 
 ```javascript
-import { el } from './tez.js';
+import { el } from './tez-dom.js';
 
 const btn = el('button'); // Output: <button></button>
 
@@ -53,7 +53,7 @@ to it first and then to the parent element.
 
 **Example:**
 ```javascript
-import { el, frag } from './tez.js';
+import { el, frag } from './tez-dom.js';
 
 const createItem = task => {
   const item = el('li.item');
@@ -79,7 +79,7 @@ document.body.appendChild(createList(['Buy Milk', 'Buy Tea', 'Water Plants']));
 ### Handling events
 
 ```javascript 
-import { on, off, ready } from './tez.js';
+import { on, off, ready } from './tez-dom.js';
 
 const greet = () => console.log("hello world");
 
@@ -94,7 +94,7 @@ ready(() => {
 ### Attributes and CSS styling
 
 ```javascript
-import { style, attr } from './tez.js';
+import { style, attr } from './tez-dom.js';
 
 style(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
 
