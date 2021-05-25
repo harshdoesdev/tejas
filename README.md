@@ -5,6 +5,11 @@ A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 ## Install
 tez-dom is a Native Javascript Module which you can import in your project.
 
+**From NPM:**
+```js
+npm i tez-dom
+```
+
 **From CDN:**
 ```javascript
 import { ready, qs, on } from 'https://cdn.jsdelivr.net/gh/rwbeast/tez-dom/tez-dom.js';
