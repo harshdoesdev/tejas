@@ -112,3 +112,4 @@ attr(elem, "id", "test"); // setAttribute
 
 attr(elem, "disabled", false); // removeAttribute
 ```
+Made With **&hearts;** in Bharat
