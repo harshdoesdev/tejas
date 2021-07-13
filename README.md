@@ -1,8 +1,6 @@
 # tez-dom
 <img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" width="128px" height="128px">
 
-![GitHub file size in bytes](https://img.shields.io/github/size/rwbeast/tez-dom/dist/tez-dom.min.js)
-
 A Tiny DOM Manipulation Library. Tez means fast in Hindi.
 
 ## Usage
