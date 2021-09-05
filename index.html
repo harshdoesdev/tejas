@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas - Tiny Dom Manipulation Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+<h1>Tejas</h1>
+<p><img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" alt="Tejas Logo" width="128px" height="128px"></p>
+<p>A Tiny DOM Manipulation Library.</p>
+<p><a href="https://github.com/harshsinghdev/tejas">Github</a></p>
+<h2>Usage</h2>
+<h3>Querying elements</h3>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { qs, qsa } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> elem = qs(<span class="hljs-string">&quot;#test&quot;</span>); <span class="hljs-comment">// document.querySelector</span>
+
+<span class="hljs-keyword">const</span> elems = qsa(<span class="hljs-string">&quot;div&quot;</span>); <span class="hljs-comment">// document.querySelectorAll</span>
+</code></pre>
+<h3>Creating elements</h3>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { el } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> btn = el(<span class="hljs-string">&#x27;button&#x27;</span>); <span class="hljs-comment">// Output: &lt;button&gt;&lt;/button&gt;</span>
+
+<span class="hljs-keyword">const</span> foo = el(<span class="hljs-string">&#x27;.class1.class2#foo&#x27;</span>); <span class="hljs-comment">// Output: &lt;div id=&quot;foo&quot; class=&quot;class1 class2&quot;&gt;&lt;/div&gt;</span>
+
+<span class="hljs-keyword">const</span> svg = el(<span class="hljs-string">&#x27;svg&#x27;</span>, <span class="hljs-literal">true</span>); <span class="hljs-comment">// for creating SVG elements, pass true as the second argument</span>
+
+<span class="hljs-keyword">const</span> path = el(<span class="hljs-string">&#x27;path&#x27;</span>, <span class="hljs-literal">true</span>);
+</code></pre>
+<p class="note"><strong>Note:</strong> When you have to append an element to the DOM that’s going to contain several other child elements,
+you should first append its child nodes to a <code>DocumentFragment</code> and append the childnodes
+to it first and then to the parent element.</p>
+<p><strong>Example:</strong></p>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { el, frag } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> createItem = <span class="hljs-function"><span class="hljs-params">task</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> item = el(<span class="hljs-string">&#x27;li.item&#x27;</span>);
+  item.textContent = task;
+  
+  <span class="hljs-keyword">return</span> item;
+};
+
+<span class="hljs-keyword">const</span> createList = <span class="hljs-function"><span class="hljs-params">tasks</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> list = el(<span class="hljs-string">&#x27;ul.list&#x27;</span>);
+  <span class="hljs-keyword">const</span> items = tasks.map(createItem);
+  <span class="hljs-keyword">const</span> fragment = frag();
+
+  fragment.append(...items);
+  list.appendChild(fragment);
+  
+  <span class="hljs-keyword">return</span> list;
+};
+
+<span class="hljs-built_in">document</span>.body.appendChild(createList([<span class="hljs-string">&#x27;Buy Milk&#x27;</span>, <span class="hljs-string">&#x27;Buy Tea&#x27;</span>, <span class="hljs-string">&#x27;Water Plants&#x27;</span>]));
+</code></pre>
+<h3>Handling events</h3>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { on, off, ready } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+
+<span class="hljs-keyword">const</span> greet = <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello world&quot;</span>);
+
+on(button, <span class="hljs-string">&quot;click&quot;</span>, greet); <span class="hljs-comment">// addEventListener</span>
+
+off(button, <span class="hljs-string">&quot;click&quot;</span>, greet); <span class="hljs-comment">// removeEventListener</span>
+
+ready(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// Your code which you want to run after the DOM has loaded.</span>
+});
+</code></pre>
+<h3>Attributes and CSS styling</h3>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { style, attr } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+
+style(elem, { <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&quot;blue&quot;</span> }); <span class="hljs-comment">// adding multiple styles to an element</span>
+
+<span class="hljs-built_in">console</span>.log(attr(elem, <span class="hljs-string">&quot;id&quot;</span>)); <span class="hljs-comment">// getAttribute</span>
+
+attr(elem, <span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;test&quot;</span>); <span class="hljs-comment">// setAttribute</span>
+
+attr(elem, <span class="hljs-string">&quot;disabled&quot;</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// removeAttribute</span>
+</code></pre>
+<p>Made With <strong class="love">♥</strong> in Bharat</p>
+
+</body>
+</html>
