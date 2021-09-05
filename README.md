@@ -34,7 +34,7 @@ to it first and then to the parent element.
 
 **Example:**
 ```javascript
-import { el } from './tejas.js';
+import { el, frag } from './tejas.js';
 
 const createItem = task => {
   const item = el('li.item');
@@ -46,10 +46,10 @@ const createItem = task => {
 const createList = tasks => {
   const list = el('ul.list');
   const items = tasks.map(createItem);
-  const frag = document.createDocumentFragment();
+  const fragment = frag();
 
-  frag.append(...items);
-  list.appendChild(frag);
+  fragment.append(...items);
+  list.appendChild(fragment);
   
   return list;
 };
