@@ -43,6 +43,8 @@ export const el = (selector, isSvg = false) => {
   return element;
 };
 
+export const frag = () => document.createDocumentFragment();
+
 export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
 export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
