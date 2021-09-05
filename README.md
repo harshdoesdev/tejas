@@ -1,7 +1,7 @@
-# tez-dom
+# Tejas
 <img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" width="128px" height="128px">
 
-A Tiny DOM Manipulation Library. Tez means fast in Hindi.
+A Tiny DOM Manipulation Library.
 
 ## Usage
 
