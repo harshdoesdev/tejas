@@ -29,7 +29,7 @@ const svg = el('svg', true); // for creating SVG elements, pass true as the seco
 const path = el('path', true);
 ```
 **Note:** When you have to append an element to the DOM that's going to contain several other child elements, 
-you should first append its child nodes to a `DocumentFragment`, which you can create using the `frag()` function included in the library. and append the childnodes
+you should first append its child nodes to a `DocumentFragment` and append the childnodes
 to it first and then to the parent element.
 
 **Example:**
