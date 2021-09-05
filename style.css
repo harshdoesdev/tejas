@@ -1,0 +1,55 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 1rem;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(38, 38, 253);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h2 {
+    border-bottom: 1px solid #ddd;
+    padding: .5rem 0;
+}
+
+pre {
+    padding: 1rem;
+    background-color: #f3f3f3;
+    border-radius: .5rem;
+    overflow: auto;
+}
+
+.hljs-keyword {
+    color: rgb(228, 1, 50);
+}
+
+.hljs-string {
+    color: #3a3a3f;
+}
+
+.hljs-comment {
+    color: rgb(145, 145, 145);
+}
+
+.love {
+    color: red;
+    font-size: x-large;
+}
