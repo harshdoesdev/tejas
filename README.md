@@ -8,7 +8,7 @@ A Tiny DOM Manipulation Library.
 ### Querying elements
 
 ```javascript
-import { qs, qsa } from './tez-dom.js';
+import { qs, qsa } from './tejas.js';
 
 const elem = qs("#test"); // document.querySelector
 
@@ -18,7 +18,7 @@ const elems = qsa("div"); // document.querySelectorAll
 ### Creating elements
 
 ```javascript
-import { el } from './tez-dom.js';
+import { el } from './tejas.js';
 
 const btn = el('button'); // Output: <button></button>
 
@@ -34,7 +34,7 @@ to it first and then to the parent element.
 
 **Example:**
 ```javascript
-import { el, frag } from './tez-dom.js';
+import { el, frag } from './tejas.js';
 
 const createItem = task => {
   const item = el('li.item');
@@ -60,7 +60,7 @@ document.body.appendChild(createList(['Buy Milk', 'Buy Tea', 'Water Plants']));
 ### Handling events
 
 ```javascript 
-import { on, off, ready } from './tez-dom.js';
+import { on, off, ready } from './tejas.js';
 
 const greet = () => console.log("hello world");
 
@@ -75,7 +75,7 @@ ready(() => {
 ### Attributes and CSS styling
 
 ```javascript
-import { style, attr } from './tez-dom.js';
+import { style, attr } from './tejas.js';
 
 style(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
 
