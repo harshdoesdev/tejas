@@ -10,18 +10,26 @@
 <body>
 
 <h1>Tejas</h1>
+    
 <p><img src="https://raw.githubusercontent.com/rwbeast/tez-dom/master/logo.svg" alt="Tejas Logo" width="128px" height="128px"></p>
+    
 <p>A Tiny DOM Manipulation Library.</p>
+    
 <p><a href="https://github.com/harshsinghdev/tejas">Github</a></p>
+    
 <h2>Usage</h2>
+    
 <h3>Querying elements</h3>
+    
 <pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { qs, qsa } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> elem = qs(<span class="hljs-string">&quot;#test&quot;</span>); <span class="hljs-comment">// document.querySelector</span>
 
 <span class="hljs-keyword">const</span> elems = qsa(<span class="hljs-string">&quot;div&quot;</span>); <span class="hljs-comment">// document.querySelectorAll</span>
 </code></pre>
+    
 <h3>Creating elements</h3>
+    
 <pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { el } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> btn = el(<span class="hljs-string">&#x27;button&#x27;</span>); <span class="hljs-comment">// Output: &lt;button&gt;&lt;/button&gt;</span>
@@ -32,10 +40,12 @@
 
 <span class="hljs-keyword">const</span> path = el(<span class="hljs-string">&#x27;path&#x27;</span>, <span class="hljs-literal">true</span>);
 </code></pre>
+    
 <p class="note"><strong>Note:</strong> When you have to append an element to the DOM that’s going to contain several other child elements,
 you should first append its child nodes to a <code>DocumentFragment</code> and append the childnodes
 to it first and then to the parent element.</p>
 <p><strong>Example:</strong></p>
+    
 <pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { el, frag } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> createItem = <span class="hljs-function"><span class="hljs-params">task</span> =&gt;</span> {
@@ -58,7 +68,9 @@ to it first and then to the parent element.</p>
 
 <span class="hljs-built_in">document</span>.body.appendChild(createList([<span class="hljs-string">&#x27;Buy Milk&#x27;</span>, <span class="hljs-string">&#x27;Buy Tea&#x27;</span>, <span class="hljs-string">&#x27;Water Plants&#x27;</span>]));
 </code></pre>
+    
 <h3>Handling events</h3>
+    
 <pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { on, off, ready } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
 <span class="hljs-keyword">const</span> greet = <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello world&quot;</span>);
@@ -72,6 +84,7 @@ ready(<span class="hljs-function">() =&gt;</span> {
 });
 </code></pre>
 <h3>Attributes and CSS styling</h3>
+
 <pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { style, attr } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
 style(elem, { <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&quot;blue&quot;</span> }); <span class="hljs-comment">// adding multiple styles to an element</span>
@@ -82,7 +95,8 @@ attr(elem, <span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-st
 
 attr(elem, <span class="hljs-string">&quot;disabled&quot;</span>, <span class="hljs-literal">false</span>); <span class="hljs-comment">// removeAttribute</span>
 </code></pre>
-<p>Made With <strong class="love">❤️</strong> in Bharat</p>
+
+<p>Made With <strong class="love">❤️</strong> in भारत</p>
 
 </body>
 </html>
