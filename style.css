@@ -9,7 +9,7 @@ html {
 body {
     margin: 1rem;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
 }
 
 a {
@@ -32,21 +32,21 @@ h2 {
 
 pre {
     padding: 1rem;
-    background-color: #f3f3f3;
+    background-color: #f6f8fa;
     border-radius: .5rem;
     overflow: auto;
 }
 
 .hljs-keyword {
-    color: rgb(228, 1, 50);
+    color: #cf222e;
 }
 
 .hljs-string {
-    color: #3a3a3f;
+    color: #0a3069;
 }
 
 .hljs-comment {
-    color: rgb(145, 145, 145);
+    color: #6e7781;
 }
 
 .love {
