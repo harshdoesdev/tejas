@@ -75,7 +75,7 @@ ready(() => {
 ### Attributes and CSS styling
 
 ```javascript
-import { style, attr } from './tejas.js';
+import { setStyle, attr } from './tejas.js';
 
 setStyle(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
 
