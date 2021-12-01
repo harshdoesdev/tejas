@@ -85,9 +85,9 @@ ready(<span class="hljs-function">() =&gt;</span> {
 </code></pre>
 <h3>Attributes and CSS styling</h3>
 
-<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { style, attr } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">import</span> { setStyle, attr } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./tejas.js&#x27;</span>;
 
-style(elem, { <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&quot;blue&quot;</span> }); <span class="hljs-comment">// adding multiple styles to an element</span>
+setStyle(elem, { <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&quot;blue&quot;</span> }); <span class="hljs-comment">// adding multiple styles to an element</span>
 
 <span class="hljs-built_in">console</span>.log(attr(elem, <span class="hljs-string">&quot;id&quot;</span>)); <span class="hljs-comment">// getAttribute</span>
 
