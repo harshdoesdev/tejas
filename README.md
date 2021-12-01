@@ -77,7 +77,7 @@ ready(() => {
 ```javascript
 import { style, attr } from './tejas.js';
 
-style(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
+setStyle(elem, { color: "red", background: "blue" }); // adding multiple styles to an element
 
 console.log(attr(elem, "id")); // getAttribute
 
