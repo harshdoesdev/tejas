@@ -51,7 +51,7 @@ export const qs = (selectors, ctx = doc) => ctx.querySelector(selectors);
 
 export const qsa = (selectors, ctx = doc) => ctx.querySelectorAll(selectors);
 
-export const style = (element, styleObj) => Object.assign(element.style, styleObj);
+export const setStyle = (element, styleObj) => Object.assign(element.style, styleObj);
 
 export const attr = (element, attributeName, value) => {
   if (value === undefined)
