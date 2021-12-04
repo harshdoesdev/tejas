@@ -25,25 +25,33 @@ const parseSelector = selector => {
   };
 };
 
-export const el = (selector, isSvg = false) => {
+export const el = selector => {
   const { tag, id, className } = parseSelector(selector);
-  const element = isSvg ? doc.createElementNS(ns, tag) : doc.createElement(tag);
+  const element = doc.createElement(tag);
 
   if (id) 
     element.id = id;
 
-  if (className) {
-    if (isSvg) {
-      attr(element, 'class', className);
-    } else {
-      element.className = className;
-    }
-  }
+  if (className) 
+    element.className = className;
 
   return element;
 };
 
-export const frag = () => document.createDocumentFragment();
+export const svg = selector => {
+  const { tag, id, className } = parseSelector(selector);
+  const element = doc.createElementNS(ns, tag);
+
+  if (id)
+    element.id = id;
+
+  if (className)
+    attr(element, 'class', className);
+
+  return element;
+};
+
+export const frag = () => doc.createDocumentFragment();
 
 export const text = (data = '') => doc.createTextNode(data);
 
