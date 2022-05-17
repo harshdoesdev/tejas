@@ -24,9 +24,8 @@ const btn = el('button'); // Output: <button></button>
 
 const foo = el('.class1.class2#foo'); // Output: <div id="foo" class="class1 class2"></div>
 
-const svg = el('svg', true); // for creating SVG elements, pass true as the second argument
-
-const path = el('path', true);
+const svgEl = svg('svg'); // for creating SVG elements
+const path = svg('path');
 ```
 **Note:** When you have to append an element to the DOM that's going to contain several other child elements, 
 you should first append its child nodes to a `DocumentFragment` and append the childnodes
