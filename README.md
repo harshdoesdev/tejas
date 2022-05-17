@@ -18,7 +18,7 @@ const elems = qsa("div"); // document.querySelectorAll
 ### Creating elements
 
 ```javascript
-import { el } from './tejas.js';
+import { el, svg } from './tejas.js';
 
 const btn = el('button'); // Output: <button></button>
 
